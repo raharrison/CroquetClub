@@ -1,14 +1,16 @@
 CroquetClub::Application.routes.draw do
-  get "core/index"
-  get "core/about_the_club"
-  get "core/how_to_join"
-  get "core/what_you_need"
-  get "core/programme"
-  get "core/news_letters"
-  get "core/club_matters"
-  get "core/how_to_get_there"
-  get "core/book_a_lawn"
-  get "core/links"
+  root "core#index"
+
+  match "/about_the_club" => "core#about_the_club", via: :get
+  match "/how_to_join" => "core#how_to_join", via: :get
+  match "/what_you_need" => "core#what_you_need", via: :get
+  match "/programme" => "core#programme", via: :get
+  match "/news_letters" => "core#news_letters", via: :get
+  match "/club_matters" => "core#club_matters", via: :get
+  match "/how_to_get_there" => "core#how_to_get_there", via: :get
+  match "/book_a_lawn" => "core#book_a_lawn", via: :get
+  match "/links" => "core#links", via: :get
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
