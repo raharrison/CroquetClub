@@ -28,7 +28,7 @@ class CoreController < ApplicationController
   end
 
   def how_to_get_there
-    @title = "How to get there"
+    @title = "How to get There"
   end
 
   def book_a_lawn
@@ -36,6 +36,6 @@ class CoreController < ApplicationController
   end
 
   def links
-    @title = "Links to other Croquet Sites"
+    @title = "Links to Croquet Sites"
   end
 end
