@@ -16,7 +16,7 @@ class CoreController < ApplicationController
   end
 
   def programme
-    @title = "2013 Programme"
+    @title = "#{Time.now.year} Programme"
   end
 
   def news_letters
