@@ -1,2 +1,15 @@
 <h1><%= @title %></h1>
-<p>Find me in app/views/core/programme.html.erb</p>
+
+<article id="events">
+	<% @events.each do |event| %>
+	<section>
+		<h2><%= event.title %></h2>
+		<p>
+			<%= event.description %>
+		</p>
+		<p>
+			<%= event.date %>
+		</p>
+	</section>
+	<% end %>
+</article>
