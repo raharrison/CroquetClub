@@ -30,6 +30,9 @@ gem 'jbuilder', '~> 1.2'
 # Use Active-Admin for administrators
 gem 'activeadmin', github: 'gregbell/active_admin'
 
+# Use carrierwave to support pdf newsletter uploads by admins
+gem 'carrierwave'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
