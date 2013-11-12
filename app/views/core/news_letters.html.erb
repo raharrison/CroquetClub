@@ -1,2 +1,15 @@
-<h1>Core#news_letters</h1>
-<p>Find me in app/views/core/news_letters.html.erb</p>
+<h1>News Letters</h1>
+
+<article id="news_letters">
+	<% @letters.each do |pdf| %>
+	<section>
+		<h2><%= pdf.title %></h2>
+		<p>
+			<%= link_to "Download", pdf.pdf.to_s %>
+		</p>
+		<p>
+			<%= pdf.date %>
+		</p>
+	</section>
+	<% end %>
+</article>
