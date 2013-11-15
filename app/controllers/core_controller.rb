@@ -17,7 +17,7 @@ class CoreController < ApplicationController
 
   def programme
     @title = "#{Time.now.year} Programme"
-    @events = Event.all
+    @events = Event.order(date: :asc).all
   end
 
   def news_letters
