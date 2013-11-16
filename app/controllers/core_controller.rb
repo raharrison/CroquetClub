@@ -22,7 +22,7 @@ class CoreController < ApplicationController
 
   def news_letters
     @title = "News Letters"
-    @letters = NewsLetter.all
+    @letters = NewsLetter.order(date: :desc).all
   end
 
   def club_matters
