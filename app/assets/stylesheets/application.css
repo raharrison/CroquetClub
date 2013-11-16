@@ -40,7 +40,7 @@ section
 
 header
 {
-    height:100px;
+    height:auto;
     background: url(cheam_croquet_logo_small.jpg) top left no-repeat;
     background-size: contain;
     text-align: center;
