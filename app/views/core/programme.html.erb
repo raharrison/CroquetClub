@@ -2,14 +2,14 @@
 
 <article id="events">
 	<% @events.each do |event| %>
-	<section>
-		<h2><%= event.title %></h2>
-		<p>
-			<%= event.description %>
-		</p>
-		<p>
-			<%= event.date %>
-		</p>
-	</section>
+		<section>
+			<h2><%= event.title %></h2>
+			<p>
+				<%= event.description %>
+			</p>
+			<p>
+				<%= event.date %>
+			</p>
+		</section>
 	<% end %>
 </article>
