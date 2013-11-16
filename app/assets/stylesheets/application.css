@@ -25,6 +25,7 @@
     border-style:solid;
     border-width:2px;
     border-color:#222d45;
+    font-family: "Verdana";
 }
 
 h1
@@ -44,7 +45,6 @@ header
     background: url(cheam_croquet_logo_small.jpg) top left no-repeat;
     background-size: contain;
     text-align: center;
-    font-family: "Verdana";
     font-size: 16px;
     margin-bottom: 5px;
 }
@@ -52,17 +52,19 @@ header
 header h1
 {
     text-decoration: none;
+    font-weight: bolder;
+    font-size: 45px;
 }
 
 header h3
 {
-    font-size: 17px;
+    font-size: 18px;
 }
 
 nav
 {  
     overflow:hidden;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: bold;
     background-color: #333;
     margin-bottom: 10px;
