@@ -27,6 +27,11 @@
     border-color:#222d45;
 }
 
+h1
+{
+    text-decoration: underline;
+}
+
 section
 {
     border-bottom: 2px solid gray;
@@ -42,6 +47,11 @@ header
     font-family: "Verdana";
     font-size: 16px;
     margin-bottom: 5px;
+}
+
+header h1
+{
+    text-decoration: none;
 }
 
 header h3
