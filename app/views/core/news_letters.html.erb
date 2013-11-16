@@ -3,15 +3,14 @@
 <% @current = 0 %>
 
 <article id="news_letters">
-
 	<% @letters.each do |pdf| %>
 		<% if @current != pdf.date.year %>
 			<% @current = pdf.date.year %>
 			<h2><%= @current %></h2>
 		<% end %>
 
-		<section>
+        <p>
 			<h4><%= link_to pdf.title, pdf.pdf.to_s %></h4>
-		</section>
+        </p>
 	<% end %>
 </article>

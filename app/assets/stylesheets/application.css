@@ -27,6 +27,12 @@
     border-color:#222d45;
 }
 
+section
+{
+    border-bottom: 2px solid gray;
+    margin-bottom: 10px;
+}
+
 header
 {
     height:100px;
