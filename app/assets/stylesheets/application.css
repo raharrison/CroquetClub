@@ -26,6 +26,22 @@
     border-color:#222d45;
 }
 
+header
+{
+    height:100px;
+    background: url(cheam_croquet_logo_small.jpg) top left no-repeat;
+    background-size: contain;
+    text-align: center;
+    font-family: "Verdana";
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+header h3
+{
+    font-size: 17px;
+}
+
 nav
 {  
     overflow:hidden;
