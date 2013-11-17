@@ -107,3 +107,8 @@ nav ul li a:hover
 {    
     background-color:#0b75b2;
 }
+
+a:visited
+{
+    color: blue;
+}
