@@ -14,7 +14,6 @@
 
 .container
 {
-    -webkit-border-radius: 10px;
     margin-top: 10px;
     margin-bottom: 10px;
     margin-right: auto;
@@ -27,8 +26,8 @@
     border-width:2px;
     border-color:#222d45;
     font-family: "Arial" "Lucida Sans";
-
     background-color: #FDF3E7;
+    -webkit-box-shadow: 10px 10px 8px rgba(0, 0, 0, 0.70);
 }
 
 body
