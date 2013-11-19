@@ -22,11 +22,17 @@
     min-width: 650px;
     width: 70%;
     padding: 15px;
-    background-color:#E8E8E8;
     border-style:solid;
     border-width:2px;
     border-color:#222d45;
     font-family: "Verdana";
+
+    background-color: #FDF3E7;
+}
+
+body
+{
+    background-color: #C63D0F;
 }
 
 h1
@@ -44,7 +50,7 @@ header
 {
     height:auto;
     text-align: center;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
     padding: 10px;
 }
 
@@ -72,7 +78,7 @@ nav
 {  
     overflow:hidden;
     font-weight: bold;
-    background-color: #333;
+    background-color: #3B3738;
     margin-bottom: 10px;
 }
 
@@ -99,7 +105,7 @@ nav ul li a
 {    
     float: left;
     color: white;
-    background-color: #333;
+    background-color: #3B3738;
 }
 
 nav ul li a:visited
