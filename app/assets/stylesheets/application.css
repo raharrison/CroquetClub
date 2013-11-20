@@ -10,8 +10,9 @@
  *
  *= require_self
  *= require normalize
+  *= require header
  *= require navigation
- *= require header
+ *= require footer
  */
 
 .container
@@ -49,10 +50,4 @@ section
 a:visited
 {
     color: blue;
-}
-
-footer
-{
-    text-align: center;
-    font-size: 0.75em;
 }
