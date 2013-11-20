@@ -15,3 +15,20 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+$(document).on("page:change", function() {
+    $( "#past_events" ).hide();
+    $( "#hide_events" ).hide();
+
+    $( "#hide_events" ).click(function() {
+        $( "#past_events" ).slideUp();
+        $( this ).hide();
+        $( "#show_events").show('normal');
+    });
+
+    $( "#show_events" ).click(function() {
+        $( "#past_events" ).slideDown();
+        $( this ).hide('normal');
+        $( "#hide_events").show('normal');
+    });
+})

@@ -10,3 +10,17 @@
 		</section>
 	<% end %>
 </article>
+
+<article id="past_events">
+    <% @past_events.each do |event| %>
+        <section>
+            <h2><%= event.title %> (<%= event.date.to_formatted_s(:long) %>)</h2>
+            <p>
+                <%= event.description %>
+            </p>
+        </section>
+    <% end %>
+</article>
+
+<button id="show_events">Click here to show past events</button>
+<button id="hide_events">Click here to hide past events</button>
