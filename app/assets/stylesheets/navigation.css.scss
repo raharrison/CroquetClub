@@ -5,40 +5,36 @@ nav
     font-size: 1.1em;
     background-color: #3B3738;
     margin-bottom: 10px;
-}
 
-nav a
-{
-    display:block;
-    width:165px;
-    text-align:center;
-    padding: 5px;
-    padding-bottom: 9px;
-}
+    ul
+    {
+        margin-top: 0px;
 
-nav ul
-{
-    margin-top: 0px;
-}
+        li
+        {    
+            display: inline;
 
-nav ul li
-{    
-    display: inline;
-} 
+            a
+            {  
+                float: left;
+                color: white;
+                background-color: #3B3738;
+                display:block;
+                width:165px;
+                text-align:center;
+                padding: 5px;
+                padding-bottom: 9px;
+            }
 
-nav ul li a
-{    
-    float: left;
-    color: white;
-    background-color: #3B3738;
-}
+            a:visited
+            {    
+                color: white;
+            } 
 
-nav ul li a:visited
-{    
-    color: white;
-} 
-
-nav ul li a:hover
-{    
-    background-color:#0b75b2;
+            a:hover
+            {    
+                background-color:#0b75b2;
+            }
+        }
+    }
 }
