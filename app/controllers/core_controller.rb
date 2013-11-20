@@ -18,7 +18,7 @@ class CoreController < ApplicationController
   def programme
     @title = "#{Time.now.year} Programme"
     @events = Event.where("date >= ?", Time.now).order(date: :asc).all
-    @past_events = Event.where("date < ?", Time.now).order(date: :asc).all
+    @past_events = Event.where("date < ?", Time.now).order(date: :desc).all
   end
 
   def news_letters
