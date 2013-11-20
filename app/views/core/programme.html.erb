@@ -12,6 +12,7 @@
 </article>
 
 <article id="past_events">
+    <h2>Past Events - </h2>
     <% @past_events.each do |event| %>
         <section>
             <h2><%= event.title %> (<%= event.date.to_formatted_s(:long) %>)</h2>
