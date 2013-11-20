@@ -27,6 +27,9 @@
     border-color:#222d45;
     font-family: "Arial" "Lucida Sans";
     background-color: #FDF3E7;
+    box-shadow: 10px 10px 8px rgba(0, 0, 0, 0.70);
+    -o-box-shadow: 10px 10px 8px rgba(0, 0, 0, 0.70);
+    -moz-box-shadow: 10px 10px 8px rgba(0, 0, 0, 0.70);
     -webkit-box-shadow: 10px 10px 8px rgba(0, 0, 0, 0.70);
 }
 
