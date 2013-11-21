@@ -6,11 +6,11 @@
 	<% @letters.each do |pdf| %>
 		<% if @current != pdf.date.year %>
 			<% @current = pdf.date.year %>
-			<h2><%= @current %></h2>
+			<h3><%= @current %></h3>
 		<% end %>
 
         <p>
-			<h4><%= link_to pdf.title, pdf.pdf.to_s %></h4>
+			<h5><%= link_to pdf.title, pdf.pdf.to_s %></h5>
         </p>
 	<% end %>
 </article>
