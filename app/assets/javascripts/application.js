@@ -18,17 +18,17 @@
 
 $(document).on("page:change", function() {
     $( "#past_events" ).hide();
-    $( "#hide_events" ).hide();
 
-    $( "#hide_events" ).click(function() {
-        $( "#past_events" ).slideUp();
-        $( this ).hide();
-        $( "#show_events").show('normal');
-    });
-
-    $( "#show_events" ).click(function() {
-        $( "#past_events" ).slideDown();
-        $( this ).hide('normal');
-        $( "#hide_events").show('normal');
+    $( "#toggle_events" ).click(function() {
+        if($( "#past_events" ).is(":visible"))
+        {
+            $( "#past_events" ).slideUp();
+            $( "#toggle_events" ).text("Click here to show past events");
+        }
+        else
+        {
+            $( "#past_events" ).slideDown();
+            $( "#toggle_events" ).text("Click here to hide past events");
+        }
     });
 })
