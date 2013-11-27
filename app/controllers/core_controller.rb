@@ -38,6 +38,12 @@ class CoreController < ApplicationController
     @title = "Book a Lawn"
   end
 
+  def update_lawn
+    @lawn = Lawn.find(params[:lawn_id])
+    @lawn.booked = true
+    @lawn.save
+  end
+
   def links
     @title = "Links to Croquet Sites"
   end

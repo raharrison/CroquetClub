@@ -8,4 +8,5 @@
 <% Lawn.all.each do |lawn| %>
         <h3>Lawn: <%= lawn.id %></h3>
         <p>Is booked: <%= lawn.booked %></p>
+        <p><%= button_to "Book this Lawn", update_lawn_path(lawn_id: lawn) %></p>
 <% end %>
