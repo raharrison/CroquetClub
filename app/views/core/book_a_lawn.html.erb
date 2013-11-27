@@ -3,3 +3,9 @@
 <p>Book a lawn at the club.</p>
 
 <p>All bookings will be immediately propagated to all other users of the site.</p>
+
+
+<% Lawn.all.each do |lawn| %>
+        <h3>Lawn: <%= lawn.id %></h3>
+        <p>Is booked: <%= lawn.booked %></p>
+<% end %>
