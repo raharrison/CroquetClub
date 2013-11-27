@@ -64,7 +64,7 @@ class CoreController < ApplicationController
               sse.write({ :lawn_id => lawn.id, :booked => lawn.booked}, :event => 'update')
             end
           end
-          sleep 3
+          sleep 0.5
         end
     rescue
       #When client disconnects get IOError
