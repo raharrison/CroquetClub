@@ -1,3 +1,5 @@
+require 'messenger/sse'
+
 class CoreController < ApplicationController
   include ActionController::Live
 
@@ -34,6 +36,10 @@ class CoreController < ApplicationController
 
   def how_to_get_there
     @title = "How to get There"
+    Lawn.all.each do |lawn|
+      lawn.booked = false
+      lawn.save
+    end
   end
 
   def book_a_lawn
@@ -44,13 +50,22 @@ class CoreController < ApplicationController
     @lawn = Lawn.find(params[:lawn_id])
     @lawn.booked = true
     @lawn.save
+  end
 
+  def lawn_monitor
     response.headers['Content-Type'] = "text/event-stream"
 
     sse = Messenger::SSE.new(response.stream)
 
     begin
-      sse.write({ :lawn_id => params[:lawn_id]}, :event => 'update')
+        loop do
+          ActiveRecord::Base.uncached do
+            Lawn.all.each do |lawn|
+              sse.write({ :lawn_id => lawn.id, :booked => lawn.booked}, :event => 'update')
+            end
+          end
+          sleep 3
+        end
     rescue
       #When client disconnects get IOError
     ensure

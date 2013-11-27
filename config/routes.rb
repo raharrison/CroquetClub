@@ -13,7 +13,9 @@ CroquetClub::Application.routes.draw do
   match "/book_a_lawn" => "core#book_a_lawn", via: :get
   match "/links" => "core#links", via: :get
 
-  match "update_lawn" => "core#update_lawn", via: :post
+  match "/update_lawn" => "core#update_lawn", via: :post
+
+  get "lawn_monitor" => "core#lawn_monitor"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
