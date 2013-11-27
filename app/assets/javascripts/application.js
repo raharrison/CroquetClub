@@ -31,4 +31,20 @@ $(document).on("page:change", function() {
             $( "#toggle_events" ).text("Click here to hide past events");
         }
     });
+
+    var sPath=window.location.pathname;
+    var sPage = sPath.substring(sPath.lastIndexOf('/') + 1);
+
+    if(sPage == "book_a_lawn") {
+        setTimeout(function() {
+            var source = new EventSource('/lawn_monitor');
+            source.addEventListener('update', function(e) {
+                var obj = JSON.parse(e.data);
+                var id = obj.lawn_id;
+                var booked = obj.booked;
+
+                $("#" + id + " p").html("Is booked: " + booked);
+            });
+        }, 1); 
+    }
 })
