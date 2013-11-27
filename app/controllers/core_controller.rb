@@ -1,4 +1,6 @@
 class CoreController < ApplicationController
+  include ActionController::Live
+
   def index
     @title = "Home"
   end
@@ -42,6 +44,18 @@ class CoreController < ApplicationController
     @lawn = Lawn.find(params[:lawn_id])
     @lawn.booked = true
     @lawn.save
+
+    response.headers['Content-Type'] = "text/event-stream"
+
+    sse = Messenger::SSE.new(response.stream)
+
+    begin
+      sse.write({ :lawn_id => params[:lawn_id]}, :event => 'update')
+    rescue
+      #When client disconnects get IOError
+    ensure
+      sse.close
+    end
   end
 
   def links
