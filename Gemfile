@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'puma'
+
 gem 'activeadmin', github: 'gregbell/active_admin'
 
 # Use carrierwave to support pdf newsletter uploads by admins
