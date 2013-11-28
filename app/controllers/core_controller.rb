@@ -36,14 +36,17 @@ class CoreController < ApplicationController
 
   def how_to_get_there
     @title = "How to get There"
-    Lawn.all.each do |lawn|
-      lawn.booked = false
-      lawn.save
-    end
   end
 
   def book_a_lawn
     @title = "Book a Lawn"
+  end
+
+  def reset_lawns
+    Lawn.all.each do |lawn|
+      lawn.booked = false
+      lawn.save
+    end
   end
 
   def update_lawn

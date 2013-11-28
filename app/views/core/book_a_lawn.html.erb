@@ -4,7 +4,6 @@
 
 <p>All bookings will be immediately propagated to all other users of the site.</p>
 
-
 <% Lawn.all.each do |lawn| %>
     <section id="<%= lawn.id %>">
         <h3>Lawn: <%= lawn.id %></h3>
@@ -13,3 +12,5 @@
         <br>
     </section>
 <% end %>
+
+<%= link_to "Reset all Lawns", reset_lawns_path %>
