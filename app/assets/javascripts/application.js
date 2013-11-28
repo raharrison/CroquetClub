@@ -36,15 +36,25 @@ $(document).on("page:change", function() {
     var sPage = sPath.substring(sPath.lastIndexOf('/') + 1);
 
     if(sPage == "book_a_lawn") {
+
         setTimeout(function() {
             var source = new EventSource('/lawn_monitor');
             source.addEventListener('update', function(e) {
                 var obj = JSON.parse(e.data);
                 var id = obj.lawn_id;
                 var booked = obj.booked;
+                var queryId = "#" + id;
 
-                $("#" + id + " p").html("Is booked: " + booked);
+                if(booked) {
+                    $(queryId + ' input[type="submit"]').attr('disabled','disabled');
+                }
+                else {
+                    $(queryId + ' input[type="submit"]').removeAttr('disabled');
+                }
+
+                $(queryId + " p").html("Is booked: " + booked);
             });
         }, 1); 
+
     }
 })
