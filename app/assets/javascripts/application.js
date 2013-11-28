@@ -13,10 +13,9 @@
 //= require modernizr-latest
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //= require_tree .
 
-$(document).on("page:change", function() {
+$(document).ready(function() {
     $( "#past_events" ).hide();
 
     $( "#toggle_events" ).click(function() {
@@ -32,11 +31,7 @@ $(document).on("page:change", function() {
         }
     });
 
-    var sPath=window.location.pathname;
-    var sPage = sPath.substring(sPath.lastIndexOf('/') + 1);
-
-    if(sPage == "book_a_lawn") {
-
+    if(window.location.pathname == "/book_a_lawn") {
         setTimeout(function() {
             var source = new EventSource('/lawn_monitor');
             source.addEventListener('update', function(e) {
@@ -55,6 +50,5 @@ $(document).on("page:change", function() {
                 $(queryId + " p").html("Is booked: " + booked);
             });
         }, 1); 
-
     }
 })
