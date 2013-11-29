@@ -33,7 +33,7 @@ $(document).ready(function() {
 
     if(window.location.pathname == "/book_a_lawn") {
         setTimeout(function() {
-            var source = new EventSource('/lawn_monitor');
+            var source = new EventSource('/core');
             source.addEventListener('update', function(e) {
                 var obj = JSON.parse(e.data);
                 var id = obj.lawn_id;

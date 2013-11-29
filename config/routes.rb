@@ -3,6 +3,8 @@ CroquetClub::Application.routes.draw do
   ActiveAdmin.routes(self)
   root "core#index"
 
+  get "core" => "core#lawn_monitor"
+  
   match "/about_the_club" => "core#about_the_club", via: :get
   match "/how_to_join" => "core#how_to_join", via: :get
   match "/what_you_need" => "core#what_you_need", via: :get
@@ -16,7 +18,6 @@ CroquetClub::Application.routes.draw do
 
   match "/update_lawn" => "core#update_lawn", via: :post
 
-  get "lawn_monitor" => "core#lawn_monitor"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
