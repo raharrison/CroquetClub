@@ -13,9 +13,10 @@
 //= require modernizr-latest
 //= require jquery
 //= require jquery_ujs
+//= require turbolinks
 //= require_tree .
 
-$(document).ready(function() {
+var ready = function() {
     $( "#past_events" ).hide();
 
     $( "#toggle_events" ).click(function() {
@@ -51,4 +52,7 @@ $(document).ready(function() {
             });
         }, 1); 
     }
-})
+};
+
+jQuery(document).ready(ready)
+jQuery(document).on('page:change', ready)
