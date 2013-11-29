@@ -1,16 +1,15 @@
 <h1>News Letters</h1>
 
-<% @current = 0 %>
-
 <article id="news_letters">
-	<% @letters.each do |pdf| %>
-		<% if @current != pdf.date.year %>
-			<% @current = pdf.date.year %>
-			<h3><%= @current %></h3>
-		<% end %>
+	<% @grouped.each do |year, newsletters| %>
+        <section>
+    		<h3><%= year %></h3>
 
-        <p>
-			<h5><%= link_to pdf.title, pdf.pdf.to_s %></h5>
-        </p>
+            <% newsletters.each do |pdf| %>
+                <p>
+        			<h5><%= link_to pdf.title, pdf.pdf.to_s %></h5>
+                </p>
+            <% end %>
+        </section>
 	<% end %>
 </article>

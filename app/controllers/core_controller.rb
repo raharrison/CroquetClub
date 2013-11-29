@@ -28,6 +28,7 @@ class CoreController < ApplicationController
   def news_letters
     @title = "News Letters"
     @letters = NewsLetter.order(date: :desc).all
+    @grouped = @letters.group_by {|y| y.date.year }
   end
 
   def club_matters
