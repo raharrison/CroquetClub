@@ -8,7 +8,7 @@
     <section id="<%= lawn.id %>">
         <h3>Lawn: <%= lawn.id %></h3>
         <p>Is booked: <%= lawn.booked %></p>
-        <%= button_to "Book this Lawn", update_lawn_path(lawn_id: lawn) %>
+        <%= button_to "Book this Lawn", update_lawn_path(lawn_id: lawn), :disabled => lawn.booked? %>
         <br>
     </section>
 <% end %>
