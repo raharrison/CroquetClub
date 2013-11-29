@@ -54,16 +54,16 @@ class CoreController < ApplicationController
     @lawn = Lawn.find(params[:lawn_id])
     @lawn.booked = true
     @lawn.save
-    $lawn_updated = @lawn
+    $lawn_updated = @lawn.id
   end
 
   def lawn_monitor
     response.headers['Content-Type'] = "text/event-stream"
 
     sse = Messenger::SSE.new(response.stream)
-
+    lawn = Lawn.find($lawn_updated)
     begin
-      sse.write({ :lawn_id => $lawn_updated.id, :booked => $lawn_updated.booked}, :event => 'update')
+      sse.write({ :lawn_id => lawn.id, :booked => lawn.booked}, :event => 'update')
     rescue
       #When client disconnects get IOError
     ensure
