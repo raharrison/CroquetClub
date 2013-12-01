@@ -7,11 +7,12 @@
 <% @bookings.each do |lawn, booking| %>
     <section>
         <h3>Lawn: <%= lawn %></h3>
-
         <% booking.each do |b| %>
-            <p><%= b.date.to_formatted_s(:long) %> at <%= b.time.to_formatted_s(:time) %></p>
-            <p><%= b.booked ? "Not Available" : "Available" %></p>
-            <%= button_to "Book this Slot", update_booking_path(booking_id: b), :disabled => b.booked? %>
+            <article id="<%= b.id %>">
+                <p><%= b.date.to_formatted_s(:long) %> at <%= b.time.to_formatted_s(:time) %></p>
+                <p><%= b.booked ? "Not Available" : "Available" %></p>
+                <%= button_to "Book this Slot", update_booking_path(booking_id: b), :disabled => b.booked? %>
+            </article>
         <% end %>
         <br>
     </section>
