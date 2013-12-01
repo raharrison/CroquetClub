@@ -3,7 +3,7 @@ CroquetClub::Application.routes.draw do
   ActiveAdmin.routes(self)
   root "core#index"
 
-  get "core" => "core#lawn_monitor"
+  get "core" => "core#booking_monitor"
   
   match "/about_the_club" => "core#about_the_club", via: :get
   match "/how_to_join" => "core#how_to_join", via: :get
@@ -14,9 +14,9 @@ CroquetClub::Application.routes.draw do
   match "/how_to_get_there" => "core#how_to_get_there", via: :get
   match "/book_a_lawn" => "core#book_a_lawn", via: :get
   match "/links" => "core#links", via: :get
-  match "/reset_lawns" => "core#reset_lawns", via: :get
+  match "/reset_bookings" => "core#reset_bookings", via: :get
 
-  match "/update_lawn" => "core#update_lawn", via: :post
+  match "/update_booking" => "core#update_booking", via: :post
 
 
   # The priority is based upon order of creation: first created -> highest priority.

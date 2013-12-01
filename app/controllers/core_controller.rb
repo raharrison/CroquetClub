@@ -43,21 +43,21 @@ class CoreController < ApplicationController
     @title = "Book a Lawn"
   end
 
-  def reset_lawns
-    Lawn.all.each do |lawn|
-      lawn.booked = false
-      lawn.save
+  def reset_bookings
+    Booking.all.each do |booking|
+      booking.booked = false
+      booking.save
     end
   end
 
-  def update_lawn
-    @lawn = Lawn.find(params[:lawn_id])
-    @lawn.booked = true
-    @lawn.save
+  def update_booking
+    @booking = Booking.find(params[:booking_id])
+    @booking.booked = true
+    @booking.save
     $lawn_updated = @lawn.id
   end
 
-  def lawn_monitor
+  def booking_monitor
     response.headers['Content-Type'] = "text/event-stream"
 
     sse = Messenger::SSE.new(response.stream)
