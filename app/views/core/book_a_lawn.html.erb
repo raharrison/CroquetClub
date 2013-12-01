@@ -2,7 +2,7 @@
 
 <p>Book a lawn at the club.</p>
 
-<p>All bookings will be immediately propagated to all other users of the site.</p>
+<p>All bookings are for two hours.</p>
 
 <% @bookings.each do |lawn, booking| %>
     <section>
@@ -10,7 +10,7 @@
         <% booking.each do |b| %>
             <article id="<%= b.id %>">
                 <p><%= b.date.to_formatted_s(:long) %> at <%= b.time.to_formatted_s(:time) %></p>
-                <p><%= b.booked ? "Not Available" : "Available" %></p>
+                <p class="booked"><%= b.booked ? "Not Available" : "Available" %></p>
                 <%= button_to "Book this Slot", update_booking_path(booking_id: b), :disabled => b.booked? %>
             </article>
         <% end %>

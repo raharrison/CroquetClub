@@ -37,9 +37,9 @@ var ready = function() {
             var source = new EventSource('/core');
             source.addEventListener('update', function(e) {
                 var obj = JSON.parse(e.data);
-                var id = obj.lawn_id;
+                var id = obj.booking_id;
                 var booked = obj.booked;
-                var queryId = "#" + id;
+                var queryId = "article#" + id;
 
                 if(booked) {
                     $(queryId + ' input[type="submit"]').attr('disabled','disabled');
@@ -48,7 +48,7 @@ var ready = function() {
                     $(queryId + ' input[type="submit"]').removeAttr('disabled');
                 }
 
-                $(queryId + " p").html("Is booked: " + booked);
+                $(queryId + " p.booked").html(booked ? "Not Available" : "Available");
             });
         }, 1); 
     }
