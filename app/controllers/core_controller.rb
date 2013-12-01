@@ -49,6 +49,7 @@ class CoreController < ApplicationController
     @booking.booked = true
     @booking.save
     $last_updated = @booking.id
+    @lawn = Lawn.find(@booking.lawn_id)
   end
 
   def booking_monitor
