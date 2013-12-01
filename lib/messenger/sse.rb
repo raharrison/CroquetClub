@@ -1,3 +1,5 @@
+# Sourced from http://tenderlovemaking.com/2012/07/30/is-it-live.html
+
 require 'json'
 
 module Messenger
