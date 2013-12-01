@@ -54,16 +54,16 @@ class CoreController < ApplicationController
     @booking = Booking.find(params[:booking_id])
     @booking.booked = true
     @booking.save
-    $lawn_updated = @lawn.id
+    $last_updated = @booking.id
   end
 
   def booking_monitor
     response.headers['Content-Type'] = "text/event-stream"
 
     sse = Messenger::SSE.new(response.stream)
-    lawn = Lawn.find($lawn_updated)
+    booking = Booking.find($last_updated)
     begin
-      sse.write({ :lawn_id => lawn.id, :booked => lawn.booked}, :event => 'update')
+      sse.write({ :booking_id => booking.id, :booked => booking.booked}, :event => 'update')
     rescue
       #When client disconnects get IOError
     ensure
