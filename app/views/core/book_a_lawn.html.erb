@@ -10,7 +10,7 @@
 
         <% booking.each do |b| %>
             <p><%= b.date.to_formatted_s(:long) %> at <%= b.time.to_formatted_s(:time) %></p>
-            <p><%= b.booked %></p>
+            <p><%= b.booked ? "Not Available" : "Available" %></p>
             <%= button_to "Book this Slot", update_booking_path(booking_id: b), :disabled => b.booked? %>
         <% end %>
         <br>
