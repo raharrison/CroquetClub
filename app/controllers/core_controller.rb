@@ -41,6 +41,7 @@ class CoreController < ApplicationController
 
   def book_a_lawn
     @title = "Book a Lawn"
+    @bookings = Booking.all.group_by { |b| b.lawn_id }
   end
 
   def reset_bookings
@@ -63,7 +64,7 @@ class CoreController < ApplicationController
     sse = Messenger::SSE.new(response.stream)
     booking = Booking.find($last_updated)
     begin
-      sse.write({ :booking_id => booking.id, :booked => booking.booked}, :event => 'update')
+      #sse.write({ :booking_id => booking.id, :booked => booking.booked}, :event => 'update')
     rescue
       #When client disconnects get IOError
     ensure
