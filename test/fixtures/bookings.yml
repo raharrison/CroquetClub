@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  lawn_id: 1
+  time: 2013-12-01 13:35:14
+  date: 2013-12-01
+  booked: false
+
+two:
+  lawn_id: 1
+  time: 2013-12-01 13:35:14
+  date: 2013-12-01
+  booked: false
