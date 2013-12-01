@@ -14,7 +14,6 @@ CroquetClub::Application.routes.draw do
   match "/how_to_get_there" => "core#how_to_get_there", via: :get
   match "/book_a_lawn" => "core#book_a_lawn", via: :get
   match "/links" => "core#links", via: :get
-  match "/reset_bookings" => "core#reset_bookings", via: :get
 
   match "/update_booking" => "core#update_booking", via: :post
 

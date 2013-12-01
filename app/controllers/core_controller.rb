@@ -44,13 +44,6 @@ class CoreController < ApplicationController
     @bookings = Booking.all.group_by { |b| b.lawn_id }
   end
 
-  def reset_bookings
-    Booking.all.each do |booking|
-      booking.booked = false
-      booking.save
-    end
-  end
-
   def update_booking
     @booking = Booking.find(params[:booking_id])
     @booking.booked = true
